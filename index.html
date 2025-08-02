@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    #countdown {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 70px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .socials {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .socials a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      #countdown {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .time-box {
+        padding: 10px;
+        min-width: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Coming Soon</h1>
+  <p>We're working hard to bring you something amazing. Stay tuned!</p>
+
+  <div id="countdown">
+    <div class="time-box">
+      <span id="days">00</span>Days
+    </div>
+    <div class="time-box">
+      <span id="hours">00</span>Hours
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>Minutes
+    </div>
+    <div class="time-box">
+      <span id="seconds">00</span>Seconds
+    </div>
+  </div>
+
+  <div class="socials">
+    <a href="#" title="Twitter">&#x1F426;</a>
+    <a href="#" title="Instagram">&#x1F4F8;</a>
+    <a href="#" title="Facebook">&#x1F464;</a>
+  </div>
+
+  <script>
+    // Set the date we're counting down to
+    const launchDate = new Date("December 31, 2025 23:59:59").getTime();
+
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "We're live!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days.toString().padStart(2, '0');
+      document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }, 1000);
+  </script>
+</body>
+</html>
