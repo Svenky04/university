@@ -2,168 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Venky University</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: 'Montserrat', sans-serif;
-    }
-
     body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+    header {
+      background: linear-gradient(to right, #004e92, #000428);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #022c43;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc') no-repeat center center/cover;
+      height: 400px;
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 20px;
-      animation: fadeIn 1.5s ease-in-out;
+      text-shadow: 2px 2px 5px black;
     }
-
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      animation: slideDown 1s ease-in-out;
+    .hero h1 {
+      font-size: 3em;
     }
-
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 40px;
-      animation: slideUp 1s ease-in-out;
+    .content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-
-    #countdown {
-      display: flex;
-      gap: 20px;
-      font-size: 1.2rem;
-      justify-content: center;
+    .about, .departments {
       margin-bottom: 40px;
     }
-
-    .time-box {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
+    .departments img {
+      width: 100%;
+      max-width: 300px;
       border-radius: 10px;
-      min-width: 70px;
+      margin: 10px;
     }
-
-    .time-box span {
-      display: block;
-      font-size: 2rem;
-      font-weight: bold;
-    }
-
-    .socials {
+    .departments {
       display: flex;
-      gap: 20px;
-      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
-
-    .socials a {
+    footer {
+      background-color: #00293c;
       color: white;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-30px); opacity: 0; }
-      to   { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to   { transform: translateY(0); opacity: 1; }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      #countdown {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .time-box {
-        padding: 10px;
-        min-width: 50px;
-      }
+      text-align: center;
+      padding: 20px 0;
     }
   </style>
 </head>
 <body>
-  <h1>Coming Soon</h1>
-  <p>We're working hard to bring you something amazing. Stay tuned!</p>
 
-  <div id="countdown">
-    <div class="time-box">
-      <span id="days">00</span>Days
+<header>
+  <h1>Venky University</h1>
+  <p>Excellence in Education & Research</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Departments</a>
+  <a href="#">Admissions</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="hero">
+  <h1>Welcome to Venky University</h1>
+</div>
+
+<div class="content">
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      Venky University is a world-class institution dedicated to academic excellence, research innovation,
+      and global impact. With top-notch faculty and modern facilities, we empower students to thrive in a competitive world.
+    </p>
+  </section>
+
+  <section class="departments">
+    <h2>Departments</h2>
+    <div>
+      <img src="https://images.unsplash.com/photo-1581090700227-1e8f24d99c0d" alt="Engineering">
+      <p><strong>Engineering</strong></p>
     </div>
-    <div class="time-box">
-      <span id="hours">00</span>Hours
+    <div>
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Science">
+      <p><strong>Science</strong></p>
     </div>
-    <div class="time-box">
-      <span id="minutes">00</span>Minutes
+    <div>
+      <img src="https://images.unsplash.com/photo-1562564055-71e051d33c19" alt="Business">
+      <p><strong>Business</strong></p>
     </div>
-    <div class="time-box">
-      <span id="seconds">00</span>Seconds
+    <div>
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" alt="Arts">
+      <p><strong>Arts & Humanities</strong></p>
     </div>
-  </div>
+  </section>
+</div>
 
-  <div class="socials">
-    <a href="#" title="Twitter">&#x1F426;</a>
-    <a href="#" title="Instagram">&#x1F4F8;</a>
-    <a href="#" title="Facebook">&#x1F464;</a>
-  </div>
+<footer>
+  <p>© 2025 Venky University. All Rights Reserved.</p>
+</footer>
 
-  <script>
-    // Set the date we're counting down to
-    const launchDate = new Date("December 31, 2025 23:59:59").getTime();
-
-    const countdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      if (distance < 0) {
-        clearInterval(countdown);
-        document.getElementById("countdown").innerHTML = "We're live!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").textContent = days.toString().padStart(2, '0');
-      document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-      document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-      document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-    }, 1000);
-  </script>
 </body>
 </html>
